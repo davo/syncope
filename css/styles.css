@@ -1,18 +1,72 @@
-@import url( "element-ui.css" );
+@import url('element-ui.css');
+@import url('graphik.css');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700');
 
-body {
-	font: 16px/1 'Roboto', Helvetica, Arial, sans-serif;
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
 }
 
-html, body {
+:root {
+	--font-size: 1rem;
+	--white: #fff;
+	--neutral90: #1f2d46;
+}
+
+body {
+	font: 16px/1 'Graphik', Helvetica, Arial, sans-serif;
+	background: var(--white);
+	color: var(--neutral90);
+	font-feature-settings: 'kern';
+}
+
+html,
+body {
 	margin: 0;
 	padding: 0;
 
 	-webkit-text-size-adjust: none;
 	-ms-text-size-adjust: none;
-	text-size-adjust: none;
+	background-image: linear-gradient(to bottom, rgba(0, 170, 255, 0.3) 1px, transparent 1px);
+	/* text-size-adjust: none;
+	background: linear-gradient(
+		to bottom,
+		rgba(0, 170, 255, 0.3) 1px,
+		transparent 1px,
+		transparent 16px,
+		rgba(0, 170, 255, 0.2) 16px,
+		transparent 17px,
+		transparent 32px
+	); */
+	/* background: linear-gradient(to bottom, rgba(247, 136, 136, 0.02) 1px, transparent 1px); */
+	/* background-size: 100% 16px; */
+	background-size: 100% 2rem;
 }
+
+/* @media screen and (min-width: 40rem) {
+	.grid,
+	.grid-double,
+	.grid-light {
+		background-size: 100% 1.6rem;
+	}
+
+	.grid-double {
+		background-image: linear-gradient(
+			to bottom,
+			rgba(0, 170, 255, 0.3) 1px,
+			transparent 1px,
+			transparent 16px,
+			rgba(0, 170, 255, 0.2) 16px,
+			transparent 17px,
+			transparent 32px
+		);
+	}
+} */
+
+/* .grid {
+	background-image: linear-gradient(to bottom, rgba(0, 170, 255, 0.3) 1px, transparent 1px);
+} */
 
 * {
 	box-sizing: border-box;
@@ -78,7 +132,7 @@ strong {
 }
 
 .ctrl .ctrl__actions {
-	background: rgba(255,255,255,.9);
+	background: rgba(255, 255, 255, 0.9);
 	border-top: 1px solid #dfe6ec;
 	position: fixed;
 	bottom: 0;
@@ -106,7 +160,7 @@ strong {
 /* -- SANDBOX (PREVIEW) ---------------------------------------------------- */
 
 .sandbox-container {
-	padding: 2em;
+	/* padding: 2em; */
 	flex: 3 0 0;
 	border-left: 1px solid #dfe6ec;
 	border-right: 1px solid #dfe6ec;
@@ -116,6 +170,7 @@ strong {
 .sandbox {
 	min-height: 100vh;
 	margin: 0 auto;
+	position: relative;
 }
 
 .sandbox * {
@@ -135,8 +190,80 @@ strong {
 .sandbox code {
 	font-family: inherit;
 	background: #ececec;
-	padding: 0 .2em;
+	padding: 0 0.2em;
 }
+
+.sandbox .meta-h1 {
+	position: absolute;
+	visibility: hidden;
+	top: 4rem;
+	left: 2rem;
+	font-family: Graphik;
+	font-size: 40px;
+	font-weight: 500;
+	color: red;
+	letter-spacing: -0.2px;
+	line-height: 48px;
+}
+
+.sandbox h1,
+.sandbox h2,
+.sandbox h3,
+.sandbox h4,
+.sandbox h5,
+.sandbox p,
+.sandbox label {
+	font-family: Graphik;
+	letter-spacing: -0.2px;
+}
+
+.sandbox .regular {
+	font-weight: 400;
+}
+.sandbox .medium {
+	font-weight: 500;
+}
+
+h1 {
+	/* visibility: hidden; */
+}
+
+/* h1 {
+	position: relative;
+	line-height: 3rem;
+} */
+
+/* h1:after,
+h1:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	box-sizing: border-box;
+	pointer-events: none;
+} */
+
+/* h1:before {
+	top: -1.505625rem;
+	bottom: -1.431875rem;
+	background: rgba(255, 255, 0, 0.3);
+	outline: 1px solid #83eb3a;
+}
+
+h1:after {
+	top: 0.568125rem;
+	bottom: 0.568125rem;
+	background: rgba(64, 224, 208, 0.3);
+}
+
+h1:hover:before {
+	background: rgba(255, 255, 0, 0.5);
+}
+
+h1:hover:after {
+	background: rgba(64, 224, 208, 0.5);
+} */
 
 /* -- OUTPUT ---------------------------------------------------- */
 
@@ -163,7 +290,7 @@ strong {
 
 .output code {
 	font-family: 'Roboto Mono', monospace;
-	font-size: .8em;
+	font-size: 0.8em;
 	width: 100%;
 	height: 100%;
 	tab-size: 2;
@@ -173,34 +300,79 @@ strong {
 }
 
 .output code .hljs-number {
-	color: #20a0ff
+	color: #20a0ff;
 }
 
 .output code .hljs-attribute {
 	color: #000;
 }
 
-/* -- MISC ---------------------------------------------------- */
-
-.social {
-	position: fixed;
-	right: 20px;
-	bottom: 20px;
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
 }
 
-.social a {
-	display: block;
-	opacity: .5;
+.p {
+	background: var(--neutral90);
+	border: 2px solid white;
+	border-left: 0;
+	border-right: 0;
+	color: #fff;
+	max-width: 540px;
+	margin: 30px auto;
+
+	/* font metrics */
+	--font: 'Graphik';
+	--fm-emSquare: 1;
+	--fm-capitalHeight: 0.68;
+	--fm-descender: 0.54;
+	--fm-ascender: 1.1;
+	--fm-linegap: 0;
+
+	/* compute needed values */
+	--lineheightNormal: (var(--fm-ascender) + var(--fm-descender) + var(--fm-linegap));
+	--distanceBottom: (var(--fm-descender));
+	--distanceTop: (var(--fm-ascender) - var(--fm-capitalHeight));
+	--contentArea: (var(--lineheightNormal) * var(--computedFontSize));
+	--valign: ((var(--distanceBottom) - var(--distanceTop)) * var(--computedFontSize));
+	--computedFontSize: (var(--capital-height) / var(--fm-capitalHeight));
+	--computedLineheight: ((var(--line-height) * var(--capital-height)) - var(--valign));
+
+	/* desired capital height and line-height */
+	--capital-height: 100;
+	--line-height: 1;
+
+	/* set font family */
+	font-family: var(--font);
+
+	/* set capital height to equal font-size */
+	font-size: calc(var(--computedFontSize) * 1px);
+
+	/* set computed line-height */
+	line-height: calc(var(--computedLineheight) * 1px);
 }
 
-.social a + a {
-	margin-top: 10px;
+.c {
+	/* apply vertical align */
+	vertical-align: calc(var(--valign) * -1px);
 }
 
-.social a:hover {
-	opacity: 1;
+.c::before {
+	content: '';
+	display: inline-block;
+	width: calc(1px * var(--capital-height));
+	height: calc(1px * var(--capital-height));
+	margin-right: 10px;
+	background: url('https://cdn.pbrd.co/images/yBAKn5bbv.png');
+	background-size: cover;
 }
 
-.social a img {
-	width: 30px;
+.p1 {
+	--line-height: 2;
+}
+
+.p2 {
+	--capital-height: 75;
+	--line-height: 3;
 }

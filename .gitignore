@@ -1,0 +1,34 @@
+# Config
+src/secret.js
+
+# build artifacts
+*.sketchplugin/
+
+# npm
+node_modules
+.npm
+npm-debug.log
+package-lock.json
+yarn.lock
+
+# mac
+.DS_Store
+
+# WebStorm
+.idea
+
+# VS Code
+.vscode/
+
+# Backups
+*.zip
+
+# Data
+src/training-data/
+
+# Assets
+assets/*.sketch
+assets/*.txt
+
+# Font
+css/fonts/*
