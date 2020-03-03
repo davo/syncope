@@ -1,0 +1,23 @@
+{
+    "name": "syncope",
+    "version": "1.0.0",
+    "description": "Syncope ========================================",
+    "main": "index.js",
+    "scripts": {
+        "ws": "ws --spa index.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/davo/syncope.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/davo/syncope/issues"
+    },
+    "homepage": "https://github.com/davo/syncope#readme",
+    "dependencies": {
+        "local-web-server": "^2.6.1"
+    }
+}
